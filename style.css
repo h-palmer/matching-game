@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ded4cc;
+}
+
+h1 {
+    text-align: center;
+    padding: 50px 0 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Smooch Sans', sans-serif;
+    text-shadow: 2px 2px 2px #918071;
+    color: white;
+    font-size: 8em;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Serif', serif;
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.memory-game {
+    width: 640px;
+    height: 640px;
+    padding: 20px 0 0 0;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.33% - 10px);
+    margin: 5px;
+    box-shadow: 5px 5px 5px #918071;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face, 
+.back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #ded4cc;
+    backface-visibility: hidden;
+    -webkit-perspective: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    
+
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.score-keeper {
+    text-align: center;
+    font-size: 3em;
+    padding: 50px 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Smooch Sans', sans-serif;
+}
